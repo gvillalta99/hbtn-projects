@@ -3,5 +3,6 @@
 output_file="c"
 
 set -u
+export CFILE="${0:-main.c}"
 
 gcc -E "${CFILE}" 1>"${output_file}"
