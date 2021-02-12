@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+output_file="c"
+
+set -u
+
+gcc -E "${CFILE}" 1>"${output_file}"
