@@ -9,7 +9,6 @@
  * Return: exit status.
  */
 int main(void)
-int main(void)
 {
 	int n;
 
