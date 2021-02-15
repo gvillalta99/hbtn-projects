@@ -3,6 +3,8 @@
 
 /**
  * main - Main function
+ *
+ * Return: exit status.
  */
 int main(void)
 {
