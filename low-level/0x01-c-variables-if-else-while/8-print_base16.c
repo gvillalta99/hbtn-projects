@@ -13,7 +13,7 @@ int main(void)
 	char alphabet[] = "0123456789abcdef";
     int c;
 
-	for (c = 0; c <= 16 ; c++)
+	for (c = 0; c < 16 ; c++)
 	{
 		putchar(alphabet[c]);
 	}
