@@ -14,8 +14,10 @@ int main(void)
 
 	bool cache[100];
 
-	for(i = 0; i < 100; i++)
+	for (i = 0; i < 100; i++)
+	{
 		cache[i] = false;
+	}
 
 	for (d = 0; d <= 9; d++)
 	{
@@ -24,7 +26,7 @@ int main(void)
 		{
 			if (u == d)
 				continue;
-			if (cache[10*d + u] || cache[10*u + d])
+			if (cache[10 * d + u] || cache[10 * u + d])
 				continue;
 
 			if (!(d == 0 && u == 1))
@@ -36,7 +38,7 @@ int main(void)
 			putchar('0' + d);
 			putchar('0' + u);
 
-			cache[10*d + u] = true;
+			cache[10 * d + u] = true;
 		}
 	}
 
