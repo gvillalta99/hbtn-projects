@@ -12,16 +12,20 @@ int main(void)
 {
 	int d, u;
 
-	bool d_cache[10] = {false,false,false,false,false,false,false,false,false,false},
-		u_cache[10] = {false,false,false,false,false,false,false,false,false,false};
+	bool d_cache[10] = {false,false,false,false,false,false,false,false,false,false};
+	bool u_cache[10];
 
 	for (d = 0; d <= 9; d++)
 	{
+		u_cache = {false, false, false, false, false, false, false, false, false, false};
+
 		for (u = 0; u <= 9 ; u++)
 		{
 			if (u == d)
 				continue;
-			if ((d_cache[d] && u_cache[u]) || (d_cache[u] && u_cache[d]))
+			if (d_cache[d] && u_cache[u])
+				continue;
+			if (d_cache[u] && u_cache[d])
 				continue;
 
 			putchar('0' + d);
