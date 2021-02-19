@@ -33,9 +33,9 @@ int main(void)
 				putchar(' ');
 			}
 
-			d_cache[d] = true;
 			u_cache[u] = true;
 		}
+		d_cache[d] = true;
 	}
 
 	putchar('\n');
