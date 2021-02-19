@@ -12,21 +12,19 @@ int main(void)
 {
 	int d, u, i;
 
-	bool d_cache[10] = {false,false,false,false,false,false,false,false,false,false};
-	bool u_cache[10];
+	bool cache[100];
+
+	for(i = 0; i < 100; i++)
+		cache[i] = false;
 
 	for (d = 0; d <= 9; d++)
 	{
-		for(i = 0; i < 10; i++)
-			u_cache[i] = false;
 
 		for (u = 0; u <= 9 ; u++)
 		{
 			if (u == d)
 				continue;
-			if (d_cache[d] && u_cache[u])
-				continue;
-			if (d_cache[u] && u_cache[d])
+			if (cache[10*d + u] || cache[10*u + d])
 				continue;
 
 			putchar('0' + d);
@@ -38,9 +36,8 @@ int main(void)
 				putchar(' ');
 			}
 
-			u_cache[u] = true;
+			cache[10*d + u] = true;
 		}
-		d_cache[d] = true;
 	}
 
 	putchar('\n');
