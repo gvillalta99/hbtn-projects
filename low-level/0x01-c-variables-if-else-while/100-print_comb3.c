@@ -17,7 +17,8 @@ int main(void)
 
 	for (d = 0; d <= 9; d++)
 	{
-		u_cache = {false, false, false, false, false, false, false, false, false, false};
+		for(int i = 0; i < 10; i++)
+			u_cache[i] = false;
 
 		for (u = 0; u <= 9 ; u++)
 		{
