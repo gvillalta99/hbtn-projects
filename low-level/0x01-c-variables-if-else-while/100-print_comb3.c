@@ -27,14 +27,14 @@ int main(void)
 			if (cache[10*d + u] || cache[10*u + d])
 				continue;
 
-			putchar('0' + d);
-			putchar('0' + u);
-
-			if (!(d == 9 && u == 9))
+			if (!(d == 0 && u == 1))
 			{
 				putchar(',');
 				putchar(' ');
 			}
+
+			putchar('0' + d);
+			putchar('0' + u);
 
 			cache[10*d + u] = true;
 		}
