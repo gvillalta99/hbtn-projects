@@ -32,6 +32,9 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+
+			d_cache[d] = true;
+			u_cache[u] = true;
 		}
 	}
 
