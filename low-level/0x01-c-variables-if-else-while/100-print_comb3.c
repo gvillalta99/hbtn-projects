@@ -12,7 +12,8 @@ int main(void)
 {
 	int d, u;
 
-	bool d_cache[10], u_cache[10];
+	bool d_cache[10] = {false,false,false,false,false,false,false,false,false,false},
+		u_cache[10] = {false,false,false,false,false,false,false,false,false,false};
 
 	for (d = 0; d <= 9; d++)
 	{
