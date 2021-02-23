@@ -10,32 +10,12 @@ void sort(int c, int d, int u, int sorted[3])
 {
 
 	sorted[2] = (u <= c ? (u <= d ? u : d) : (c <= d ? c : d));
-    sorted[1] = (u <= c ?
-                 (u <= d ? (c <= d ? c : d) : u) :
-                 (u <= d ? u : (c <= d ? d : c)));
+	sorted[1] = (u <= c ?
+				 (u <= d ? (c <= d ? c : d) : u) :
+				 (u <= d ? u : (c <= d ? d : c)));
 	sorted[0] = (u > c ?
-                 (u > d ? u : (d > c ? d : c)) :
-                 (c > d ? c : d));
-/*
-    |0|1|2|
-    |u|c|d|
-    |u|d|c|
-    |d|c|u|
-    |d|u|c|
-    |c|d|u|
-    |c|u|d|
-*/
-	/* sorted[1] = (u <= d ? */
-	/* 			 (u <= c ? (d <= c ? d : u) : u) : */
-	/* 			 (d <= c ? (u <= c ? u : c) : d)); */
-	/* sorted[2] = (u <= d ? */
-	/* 			 (u <= c ? (d <= c ? c : d) : d) : */
-	/* 			 (d <= c ? (u <= c ? c : u) : u)); */
-}
-
-void xprint(int sorted[3])
-{
-    printf("(%d) \n", 100 * sorted[2] + 10 * sorted[1] + sorted[0]);
+				 (u > d ? u : (d > c ? d : c)) :
+				 (c > d ? c : d));
 }
 
 /**
@@ -62,9 +42,8 @@ int main(void)
 			{
 				sort(c, d, u, sorted);
 
-				if (u == d || d == c || u == c) {
+				if (u == d || d == c || u == c)
 					continue;
-                }
 				if (cached[100 * sorted[2] + 10 * sorted[1] + sorted[0]])
 					continue;
 
