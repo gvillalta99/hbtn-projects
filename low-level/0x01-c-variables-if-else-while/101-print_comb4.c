@@ -42,8 +42,7 @@ int main(void)
 			{
 				sort(c, d, u, sorted);
 
-
-				if (u == d && d == c)
+				if (u == d || d == c || u == c)
 					continue;
 				if (cached[100 * sorted[2] + 10 * sorted[1] + sorted[0]])
 					continue;
