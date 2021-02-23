@@ -28,6 +28,7 @@ int main(void)
 {
 	int cached[1000], sorted[3];
 	int c, d, u;
+	int counter = 0;
 
 	for (u = 0; u < 1000; u++)
 	{
@@ -49,11 +50,12 @@ int main(void)
 
 				cached[100 * sorted[2] + 10 * sorted[1] + sorted[0]] = true;
 
-				if (!(c == 0 && d == 0 && u == 1))
+				if (counter != 0)
 				{
 					putchar(',');
 					putchar(' ');
 				}
+				counter++;
 
 				putchar('0' + c);
 				putchar('0' + d);
