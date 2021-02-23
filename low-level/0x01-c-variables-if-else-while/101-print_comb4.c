@@ -6,7 +6,16 @@
 #define IS_BIT_ENABLED(n, m) (((n) & (1 << (m))) >> (m))
 #define SET_BIT(n, m) ((n) | (1 << (m)))
 
-void sort(int c, int d, int u, int sorted[3])
+/**
+ * sort3 - sort 3 elements
+ * @c: Hundreds (centena)
+ * @d: Tens (dezenas)
+ * @u: Units (unidades)
+ * @sorted: the resulting sorted values
+ *
+ * Return: nothing
+ */
+void sort3(int c, int d, int u, int sorted[3])
 {
 
 	sorted[2] = (u <= c ? (u <= d ? u : d) : (c <= d ? c : d));
@@ -40,7 +49,7 @@ int main(void)
 		{
 			for (u = 0; u <= 9 ; u++)
 			{
-				sort(c, d, u, sorted);
+				sort3(c, d, u, sorted);
 
 				if (u == d || d == c || u == c)
 					continue;
