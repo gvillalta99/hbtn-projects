@@ -6,15 +6,18 @@
 #define IS_BIT_ENABLED(n, m) (((n) & (1 << (m))) >> (m))
 #define SET_BIT(n, m) ((n) | (1 << (m)))
 
-/**
- * compare - used on qsort
- *
- * Return: exit status.
- */
-int compare(const void *x, const void *y)
+void sort(int c, int d, int u, int sorted[3])
 {
-	return (*((int *) x) - *((int *) y));
+
+	sorted[0] = (u <= d && u <= c ? u : (d <= u && d <= c ? d : c));
+	sorted[1] = (u <= d ?
+				 (u <= c ? (d <= c ? d : u) : u) :
+				 (d <= c ? (u <= c ? u : c) : d));
+	sorted[1] = (u <= d ?
+				 (u <= c ? (d <= c ? c : d) : d) :
+				 (d <= c ? (u <= c ? c : u) : u));
 }
+
 
 /**
  * main - Main function
@@ -37,11 +40,8 @@ int main(void)
 		{
 			for (u = 0; u <= 9 ; u++)
 			{
-				sorted[0] = c;
-				sorted[1] = d;
-				sorted[2] = u;
+				sort(c, d, u, sorted);
 
-				qsort(sorted, 3, sizeof(int), compare);
 
 				if (u == d && d == c)
 					continue;
